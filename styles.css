@@ -1,0 +1,39 @@
+.book-info {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  background-color: antiquewhite;
+  font-size: 30px;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}
+
+.add {
+  display: flex;
+  justify-content: center;
+  padding: 15px
+}
+
+.inactive {
+  display: none;
+}
+
+form > div {
+  width: 150px;
+  margin-bottom: 10px;
+}
