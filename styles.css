@@ -1,3 +1,7 @@
+body {
+  background-color: #f0eef1;;
+}
+
 .book-info {
   position: fixed;
   left: 50%;
@@ -38,4 +42,33 @@ form > div {
 #addBookForm {
   border: 1px solid black;
   padding: 20px;
+  border-radius: 15px;
+}
+
+.listings {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+  text-align: center;
+  gap: 15px;
+  padding: 15px;
+}
+
+.book-card {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+#title-exit {
+  display: flex;
+  justify-content: space-between;
+}
+
+#title-exit, label {
+  margin-bottom: 5px;
 }

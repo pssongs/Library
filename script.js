@@ -41,8 +41,10 @@ function createListing(newBook) {
   pages.textContent = newBook.pages
   if (newBook.read == true) {
     read.textContent = "Read"
+    read.classList.add("btn-green")
   } else {
     read.textContent = "Not Read"
+    read.classList.add("btn-read")
   }
 
   bookCard.appendChild(title)
@@ -65,10 +67,14 @@ const addButton = document.querySelector(".btn-add")
 const addBookForm = document.querySelector("#addBookForm")
 const bookInfo = document.querySelector('.book-info')
 const bookListing = document.querySelector('.listings')
-
+const exit = document.querySelector('#exit')
 
 addButton.addEventListener('click', () => {
   bookInfo.classList.add('active')
+})
+
+exit.addEventListener('click', () => {
+  bookInfo.classList.remove('active')
 })
 
 bookInfo.onsubmit = addBook
