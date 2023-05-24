@@ -17,6 +17,11 @@ class Library {
   addToLib(newBook){
     this.books.push(newBook)
   }
+
+  removeFromLib(book){
+    const i = this.books.indexOf(book)
+    this.books.splice(i,1)
+  }
 }
 
 function createBook() {
@@ -67,6 +72,7 @@ function createListing(newBook) {
   
   dlt.addEventListener('click', () => {
     bookListing.removeChild(bookCard)
+    library.removeFromLib(newBook)
   })
 }
 
