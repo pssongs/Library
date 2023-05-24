@@ -35,8 +35,9 @@ function createListing(newBook) {
   const read = document.createElement("button")
   
   bookCard.classList.add('book-card')
+  read.classList.add('readBtn')
 
-  title.textContent = newBook.title
+  title.textContent = `"${newBook.title}"`
   author.textContent = newBook.author
   pages.textContent = newBook.pages
   if (newBook.read == true) {
@@ -44,7 +45,7 @@ function createListing(newBook) {
     read.classList.add("btn-green")
   } else {
     read.textContent = "Not Read"
-    read.classList.add("btn-read")
+    read.classList.add("btn-red")
   }
 
   bookCard.appendChild(title)
@@ -54,6 +55,22 @@ function createListing(newBook) {
   bookListing.appendChild(bookCard)
 
   bookInfo.classList.remove("active")
+
+  read.addEventListener('click', () => {
+    changeColors(read)
+  })
+}
+
+function changeColors(read) {
+  if (read.textContent == "Read") {
+    read.classList.remove("btn-green")
+    read.classList.add("btn-red")
+    read.textContent = "Not Read"
+  } else {
+    read.classList.remove("btn-red")
+    read.classList.add("btn-green")
+    read.textContent = "Read"
+  }
 }
 
 function addBook(e){
@@ -61,6 +78,8 @@ function addBook(e){
   const newBook = createBook()
 
   createListing(newBook)
+  library.addToLib(newBook)
+  addBookForm.reset()
 }
 
 const addButton = document.querySelector(".btn-add")
@@ -68,6 +87,8 @@ const addBookForm = document.querySelector("#addBookForm")
 const bookInfo = document.querySelector('.book-info')
 const bookListing = document.querySelector('.listings')
 const exit = document.querySelector('#exit')
+const library = new Library()
+var greenRed = []
 
 addButton.addEventListener('click', () => {
   bookInfo.classList.add('active')

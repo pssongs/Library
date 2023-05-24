@@ -1,3 +1,7 @@
+html {
+  font-family: 'Prompt', sans-serif;
+}
+
 body {
   background-color: #f0eef1;;
 }
@@ -16,9 +20,9 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 20px 30px 20px 30px;
   align-items: center;
-  background-color: antiquewhite;
+  background-color: white;
   font-size: 30px;
   margin: 0;
 }
@@ -62,13 +66,46 @@ form > div {
   justify-content: center;
   align-items: center;
   border-radius: 20px;
+  gap: 15px;
 }
 
 #title-exit {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+#exit {
+  padding: 0 5px 0 5px;
 }
 
 #title-exit, label {
   margin-bottom: 5px;
+}
+
+.btn-green {
+  background-color: rgb(27, 197, 27);
+}
+
+.btn-red {
+  background-color: red;
+}
+
+button {
+  padding: 8px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: 'Prompt', sans-serif;
+}
+
+label + input {
+  margin-top: 6px;
+}
+
+.btn-add {
+  border: none;
+}
+
+.btn-add:hover {
+  background-color: darkgray;
 }
