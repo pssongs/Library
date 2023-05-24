@@ -47,6 +47,7 @@ form > div {
   border: 1px solid black;
   padding: 20px;
   border-radius: 15px;
+  background-color: white;
 }
 
 .listings {
@@ -108,4 +109,8 @@ label + input {
 
 .btn-add:hover {
   background-color: darkgray;
+}
+
+.readBtn, .remove {
+  width: 100px;
 }

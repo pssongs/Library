@@ -33,7 +33,8 @@ function createListing(newBook) {
   const author = document.createElement("div")
   const pages = document.createElement("div")
   const read = document.createElement("button")
-  
+  const dlt = document.createElement("button")
+
   bookCard.classList.add('book-card')
   read.classList.add('readBtn')
 
@@ -48,16 +49,24 @@ function createListing(newBook) {
     read.classList.add("btn-red")
   }
 
+  dlt.textContent = "Remove"
+  dlt.classList.add("remove")
+
   bookCard.appendChild(title)
   bookCard.appendChild(author)
   bookCard.appendChild(pages)
   bookCard.appendChild(read)
+  bookCard.appendChild(dlt)
   bookListing.appendChild(bookCard)
 
   bookInfo.classList.remove("active")
 
   read.addEventListener('click', () => {
     changeColors(read)
+  })
+  
+  dlt.addEventListener('click', () => {
+    bookListing.removeChild(bookCard)
   })
 }
 
